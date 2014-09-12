@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Stop Lights</title>
+    <script src="http://fb.me/react-0.11.1.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    <style>
+      .stopLight div{
+         border:1px solid gray;
+         border-radius:100%;
+         width:100px;
+         height:100px;
+       }     
+    </style>
+  </head>
+  <body>
+    <div id="stopLight"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      // The above declaration must remain intact at the top of the script.
+      // Your code here
+      var StopLight = React.createClass({
+        getInitialState: function() {
+          return { active: "red" }
+        },
+        render: function() {
+          return (
+	    <div className="stopLight">
+              <Light className="red" />
+              <Light className="yellow" />
+              <Light className="green" />
+	    </div>
+          );
+        }
+      });
+      var Light = React.createClass({
+        render: function(){
+          return (
+            <div class='light'>
+	    </div>
+          );
+        }
+      });
+      React.renderComponent(
+        <StopLight />,
+        document.getElementById('stopLight')
+      );
+    </script>
+  </body>
+</html>
